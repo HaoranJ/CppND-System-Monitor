@@ -30,7 +30,8 @@ string Process::Command() {
 
 // DONE: Return this process's memory utilization
 string Process::Ram() {
-  return LinuxParser::Ram(this->pid_);
+  string cmd = LinuxParser::Ram(this->pid_);
+  return cmd.length() > 50 ? (cmd.substr(0, 50) + "...") : cmd;
 }
 
 // DONE: Return the user (name) that generated this process

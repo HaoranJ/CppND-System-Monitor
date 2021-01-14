@@ -26,7 +26,7 @@ vector<Process>& System::Processes() {
     string cmd = LinuxParser::Command(pid);
     float cpu_util = LinuxParser::CpuUtilization(pid);
     Process proc(pid, uid, cmd, cpu_util);
-    this->processes_.push_back(proc);
+    this->processes_.emplace_back(proc);
   }
 
   std::sort(this->processes_.begin(), this->processes_.end());

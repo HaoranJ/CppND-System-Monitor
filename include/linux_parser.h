@@ -17,6 +17,13 @@ const std::string kMeminfoFilename{"/meminfo"};
 const std::string kVersionFilename{"/version"};
 const std::string kOSPath{"/etc/os-release"};
 const std::string kPasswordPath{"/etc/passwd"};
+const std::string filterProcesses("processes");
+const std::string filterRunningProcesses("procs_running");
+const std::string filterMemTotalString("MemTotal:");
+const std::string filterMemFreeString("MemFree:");
+const std::string filterCpu("cpu");
+const std::string filterUID("Uid:");
+const std::string filterProcMem("VmData:"); // VmSize is the sum of all the virtual memory as you can see on https://man7.org/linux/man-pages/man5/proc.5.html; VmData gives the exact physical memory being used as a part of Physical RAM.
 
 // System
 float MemoryUtilization();

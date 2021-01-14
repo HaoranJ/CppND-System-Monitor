@@ -32,7 +32,7 @@ float Processor::Utilization() {
   auto cur_total = cur_idle + cur_non_idle;
   auto total_diff = cur_total > prev_total ? cur_total - prev_total : 0;
   auto idle_diff = cur_idle > prev_idle ? cur_idle - prev_idle : 0;
-  float cpu_percentage = (static_cast<double>(total_diff) - static_cast<double>(idle_diff)) / static_cast<double>(total_diff);
+  double cpu_percentage = (static_cast<double>(total_diff) - static_cast<double>(idle_diff)) / static_cast<double>(total_diff);
 
   this->user_time_ = user_time;
   this->nice_time_ = nice_time;
