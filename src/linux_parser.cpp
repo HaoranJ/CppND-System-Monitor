@@ -315,7 +315,8 @@ string LinuxParser::User(int pid) {
   if (stream.is_open()) {
     while (std::getline(stream, line))
     {
-      string delimiter = ":x:" + std::to_string(pid);
+      string uid = Uid(pid);
+      string delimiter = ":x:" + uid;
       std::size_t idx = line.find(delimiter);
       if (idx == std::string::npos) {
         continue;
